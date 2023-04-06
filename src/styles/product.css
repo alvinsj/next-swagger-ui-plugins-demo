@@ -122,6 +122,10 @@
 	color: #80cbc4;
 }
 
+.swagger-ui .opblock.opblock-post .tab-header .tab-item.active h4 span::after {
+	background: none;
+}
+
 .topbar-wrapper .app-logo {
 	content: url('/docs/assets/product-logo.svg');
 	width: auto;

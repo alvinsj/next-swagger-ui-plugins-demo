@@ -59,7 +59,6 @@ export default class Operations extends React.Component {
 
     const operations = tagObj.get("operations")
     const tagNotes= tagObj.getIn(["tagDetails", "notes"], null)
-    console.log('tagNotes', tagNotes)
 
     return (
       <OperationTag
