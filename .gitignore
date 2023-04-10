@@ -37,3 +37,6 @@ next-env.d.ts
 
 public/swagger.yaml
 public/docs/assets
+
+.env
+*.key
