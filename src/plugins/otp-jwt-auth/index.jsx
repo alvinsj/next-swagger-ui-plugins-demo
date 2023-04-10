@@ -2,18 +2,10 @@ import { createSelector } from 'reselect'
 
 import OtpJwtAuth from './components/OtpJwtAuth'
 import Auths from './components/Auths'
+import wrapAuthItem from './wrap-components/auth-item'
 
 import reducers from './reducers'
 import * as actions from './actions'
-
-const makeAuthItem = (system) => function AuthItem(props) {
-  const OtpJwtAuth = system.getComponent('otpJwtAuth')
-
-  return <OtpJwtAuth {...props}
-    getSystem={system.getSystem}
-    {...props}
-  />
-}
 
 const otpJwtAuthPlugin = (system) => {
   return {
@@ -23,12 +15,14 @@ const otpJwtAuthPlugin = (system) => {
         reducers
       }
     },
+    wrapComponents: {
+      AuthItem: wrapAuthItem
+    },
     components: {
       auths: Auths,
-      AuthItem: makeAuthItem(system),
-      otpJwtAuth: OtpJwtAuth,
+      // AuthItem: makeAuthItem(system),
+      OtpJwtAuth: OtpJwtAuth,
     },
-    wrapComponents: {},
     rootInjects: {},
     afterLoad: () => { },
     fn: {},
