@@ -12,7 +12,6 @@ export default function Home() {
         url="./swagger.yaml"
         layout="ProductLayout"
         plugins={[otpJwtAuthPlugin, productLayoutPlugin]}
-        persistAuthorization
       />
     </>
   )
