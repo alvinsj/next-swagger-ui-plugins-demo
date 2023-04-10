@@ -81,8 +81,10 @@ export default class OtpJwtAuth extends React.Component {
     let errors = errSelectors.allErrors().filter( err => err.get("authId") === name)
 
     return (
-      <div>
-        <a href="/api/auth/saml/authorize">saml login</a>
+      <>
+        <Row>
+          <strong>SAML Login</strong>
+        </Row>
         <Row>
           <label htmlFor="jwt_email">Email:</label>
           <Col>
@@ -115,7 +117,7 @@ export default class OtpJwtAuth extends React.Component {
             } )
           }
           {
-            isOtpSent ? <div className="info" style={{ backgroundColor: "#eeffee", color: "green" }}>
+            isOtpSent ? <div style={{ backgroundColor: "#eeffee", color: "green" }}>
                           <span>OTP sent. Please check your email inbox.</span>
                         </div>
                       : null
@@ -129,8 +131,7 @@ export default class OtpJwtAuth extends React.Component {
                          </div>
         }
         </div>
-
-      </div>
+      </>
     )
   }
 }
