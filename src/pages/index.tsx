@@ -9,7 +9,8 @@ export default function Home() {
   return (
     <>
       <SwaggerUI
-        url="./swagger.yaml"
+        url={process.env.NEXT_PUBLIC_SWAGGER_URL}
+        // url="./swagger.yaml"
         layout="ProductLayout"
         plugins={[otpJwtAuthPlugin, productLayoutPlugin]}
       />
