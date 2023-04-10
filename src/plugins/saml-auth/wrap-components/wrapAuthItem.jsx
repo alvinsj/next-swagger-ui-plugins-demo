@@ -5,13 +5,12 @@ const wrapAuthItem = (Ori, system) => function WrappedAuthItem({ Ori, ...props }
     schema, getComponent, authSelectors, errSelectors, authorized, onAuthChange, name
   } = props
 
-  const OtpJwtAuth = getComponent("OtpJwtAuth")
+  const SamlAuthItem = getComponent("SamlAuthItem")
   const type = schema.get("type")
   const scheme = schema.get("scheme")
-  const otp = schema.get("otp")
 
-  if(type === "http" && scheme === 'bearer' && otp) {
-    return <OtpJwtAuth key={ name }
+  if(type === "http" && scheme == 'bearer') {
+    return <SamlAuthItem key={ name }
               schema={ schema }
               name={ name }
               authSelectors={authSelectors}
