@@ -2,7 +2,7 @@ import { createSelector } from 'reselect'
 
 import OtpJwtAuth from './components/OtpJwtAuth'
 import Auths from './components/Auths'
-import wrapAuthItem from './wrap-components/auth-item'
+import wrapAuthItem from './wrap-components/wrapAuthItem'
 
 import reducers from './reducers'
 import * as actions from './actions'

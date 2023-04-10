@@ -83,7 +83,7 @@ export default class OtpJwtAuth extends React.Component {
     return (
       <>
         <Row>
-          <strong>SAML Login</strong>
+          <strong>OTP Login</strong>
         </Row>
         <Row>
           <label htmlFor="jwt_email">Email:</label>
