@@ -23,7 +23,12 @@ export default async function handler(
     if (payload) {
       // create session and redirect to the session page
       const token = jwt.sign(payload, SECRET);
-      return res.redirect(`/?auth_token=${token}`);
+
+      // set response cookie, secure, http-only, same-site
+      res.setHeader('Set-Cookie', `session=${token}; Path=/; HttpOnly; SameSite=Strict; Secure`);
+      
+      // allow bearer token
+      return res.redirect(`/?a=${token}`);
     }
     throw new Error('ERR_USER_NOT_FOUND');
   } catch (e) {
