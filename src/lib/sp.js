@@ -10,10 +10,13 @@ samlify.setSchemaValidator(validator);
 const libDirectory = path.join(process.cwd(), 'src/lib');
 
 const sp = new ServiceProvider({
-  // required
-  entityID: 'http://localhost:8090/api/auth/saml/metadata',
   authnRequestsSigned: true,
-  privateKey: fs.readFileSync(libDirectory + '/private_key.key') 
+  privateKey: fs.readFileSync(libDirectory + '/private_key.key'),
+  assertionConsumerService: [{
+    isDefault: true,
+    Binding: 'urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST',
+    Location: 'http://localhost:8090/api/auth/saml/acs'
+  }],
 });
 
 export default sp
