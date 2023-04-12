@@ -21,10 +21,7 @@ const otpJwtAuthPlugin = (system) => {
     components: {
       auths: Auths,
       OtpJwtAuth: OtpJwtAuth,
-    },
-    rootInjects: {},
-    afterLoad: () => { },
-    fn: {},
+    }
   }
 }
 

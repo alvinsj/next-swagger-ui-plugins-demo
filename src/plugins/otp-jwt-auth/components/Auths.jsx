@@ -83,6 +83,7 @@ export default class Auths extends React.Component {
                   getComponent={getComponent}
                   onAuthChange={this.onAuthChange}
                   authorized={authorized}
+                  authSelectors={authSelectors}
                   errSelectors={errSelectors}
                   />
               }).toArray()

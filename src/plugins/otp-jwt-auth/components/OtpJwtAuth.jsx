@@ -109,20 +109,23 @@ export default class OtpJwtAuth extends React.Component {
                    disabled={ isAuthorized } />
           </Col>
         </Row>
-        <div className="auth-msg-wrapper">
-          {
-            errors.valueSeq().map( (error, key) => {
-              return <AuthError error={ error }
-                                key={ key }/>
-            } )
-          }
-          {
-            isOtpSent ? <div style={{ backgroundColor: "#eeffee", color: "green" }}>
-                          <span>OTP sent. Please check your email inbox.</span>
-                        </div>
-                      : null
-          }
-        </div>
+        {
+          (isOtpSent || errors.valueSeq().length > 0) && 
+            <div className="auth-msg-wrapper">
+              {
+                errors.valueSeq().map( (error, key) => {
+                  return <AuthError error={ error }
+                                    key={ key }/>
+                } )
+              }
+              {
+                isOtpSent ? <div style={{ backgroundColor: "#eeffee", color: "green" }}>
+                              <span>OTP sent. Please check your email inbox.</span>
+                            </div>
+                          : null
+              }
+            </div>
+        }
         <div className="auth-btn-wrapper">
         { isAuthorized ? <Button className="btn modal-btn auth authorize" onClick={ this.logout }>Logout</Button>
                        : <div>
