@@ -22,7 +22,7 @@ export const sendOtp = ( auth ) => ( { fn, authActions, errActions } ) => {
 
   let { schema, name, email } = auth
 
-  let fetchUrl = urljoin(schema.get("tokenUrl"), "/otps")
+  let fetchUrl = urljoin(schema.get("tokenUrl"), schema.get("requestOtpPath") || "/otps")
   let body = JSON.stringify({ email })
 
   let headers = {
@@ -81,7 +81,7 @@ export const authorizeOtpToken = ( auth ) => ( { fn, authActions, errActions } )
 
   let { schema, name, email, otp } = auth
 
-  let fetchUrl = urljoin(schema.get("tokenUrl"), "/tokens")
+  let fetchUrl = urljoin(schema.get("tokenUrl"), schema.get("authPath") || "/tokens")
 
   let query = {
     service: schema.get("service"),
