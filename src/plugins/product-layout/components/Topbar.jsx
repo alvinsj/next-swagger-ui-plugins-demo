@@ -12,7 +12,7 @@ export default class Topbar extends React.Component {
     this.state = { url: props.specSelectors.url(), selectedIndex: 0 }
   }
 
-  componentWillReceiveProps(nextProps) {
+  UNSAFE_componentWillReceiveProps(nextProps) {
     this.setState({ url: nextProps.specSelectors.url() })
   }
 
@@ -55,7 +55,7 @@ export default class Topbar extends React.Component {
     }
   }
 
-  componentWillMount() {
+  UNSAFE_componentWillMount() {
     const configs = this.props.getConfigs()
     const urls = configs.urls || []
 
