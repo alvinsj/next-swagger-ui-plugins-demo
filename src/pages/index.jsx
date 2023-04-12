@@ -13,7 +13,7 @@ export default function Home() {
   return (
     <>
       <SwaggerUI
-        url={process.env.NEXT_PUBLIC_SWAGGER_URL || './swagger-example'}
+        url={process.env.NEXT_PUBLIC_SWAGGER_URL || '/swagger-example.yaml'}
         // url="./swagger.yaml"
         layout="ProductLayout"
         plugins={[chainWrapComponents(samlAuthPlugin, otpJwtAuthPlugin), productLayoutPlugin]}
