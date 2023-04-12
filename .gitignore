@@ -39,4 +39,3 @@ public/swagger.yaml
 public/docs/assets
 
 .env
-*.key
