@@ -1,0 +1,58 @@
+
+import dynamic from 'next/dynamic'
+import otpJwtAuthPlugin from '@/plugins/otp-jwt-auth'
+import productLayoutPlugin from '@/plugins/product-layout'
+import samlAuthPlugin from '@/plugins/saml-auth'
+import deepMerge from 'deepmerge'
+
+// swagger-ui-react is not SSR compatible
+const SwaggerUI = dynamic(import('swagger-ui-react'), { ssr: false })
+
+export default function Home() {
+
+  return (
+    <>
+      <SwaggerUI
+        url={process.env.NEXT_PUBLIC_SWAGGER_URL || './swagger-example'}
+        // url="./swagger.yaml"
+        layout="ProductLayout"
+        plugins={[chainWrapComponents(samlAuthPlugin, otpJwtAuthPlugin), productLayoutPlugin]}
+        pluginsOptions={{
+          pluginLoadType: 'chain'
+        }}
+      />
+    </>
+  )
+}
+
+export const chainWrapComponents = (first, ...plugins) => (system) =>
+  plugins.reduce((ori, plugin) => {
+    const { wrapComponents, ...pluginConfig } = plugin(system)
+    const { wrapComponents: oriWrapComponents, ...oriPluginConfig } = ori
+
+    return {
+
+      wrapComponents: Object.entries(wrapComponents).reduce((merged, [key, wrapComponent]) => {
+        const chained = oriWrapComponents?.[key] ?
+          (ori, sys) => function Chained(props) {
+
+            const First = wrapComponent(ori, sys)
+            const Second = oriWrapComponents?.[key](ori, sys)
+
+            return <>
+              {First && <First {...props} />}
+              {Second && <Second {...props} />}
+            </>
+          } : wrapComponent;
+
+        return {
+          ...merged,
+          [key]: chained
+        }
+      }, oriWrapComponents || {}),
+
+
+      ...deepMerge(oriPluginConfig, pluginConfig)
+    }
+  }, first(system))
+
