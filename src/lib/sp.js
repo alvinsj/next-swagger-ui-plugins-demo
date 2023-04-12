@@ -11,7 +11,7 @@ const libDirectory = path.join(process.cwd(), 'src/lib');
 
 const sp = new ServiceProvider({
   authnRequestsSigned: true,
-  privateKey: fs.readFileSync(libDirectory + '/private_key.key'),
+  privateKey: fs.readFileSync(libDirectory + '/mock-private-key.key'),
   assertionConsumerService: [{
     isDefault: true,
     Binding: 'urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST',
