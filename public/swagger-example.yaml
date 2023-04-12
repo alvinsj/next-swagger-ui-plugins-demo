@@ -1,0 +1,115 @@
+openapi: '3.0.0'
+servers:
+  - url: /api/service/
+info:
+  version: v2.0
+  title: SECRET API
+  description: |
+    Welcome to Project API documentation! 
+    <section class="ac-container">
+      <div>
+        <input id="ac-abt-data" type="checkbox" />
+        <label for="ac-abt-data" class="opblock-tag">About the Data</label>
+        <article class="ac-content">
+          <div class="opblock opblock-get">
+            <div class="opblock-description-wrapper">
+              <h3><b>Data Source</b></h3>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sapien purus, feugiat eu molestie in, ultrices in enim. Pellentesque quis ornare nulla. Donec ut porta turpis. Maecenas dictum ullamcorper lacus, et feugiat sem finibus viverra. Nullam interdum luctus mi. Morbi id vestibulum ante, ac pharetra felis. Praesent orci augue, interdum et finibus vel, varius vel lacus. Sed euismod, risus sed fringilla dictum, mi erat pharetra arcu, a sagittis nibh enim sit amet sem.
+            </div>
+          </div>
+        </article>
+      </div>
+      <div>
+        <input id="ac-get-started" type="checkbox" />
+        <label for="ac-get-started" class="opblock-tag">Getting Started</label>
+        <article class="ac-content">
+          <div class="opblock opblock-get">
+            <div class="opblock-description-wrapper">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sapien purus, feugiat eu molestie in, ultrices in enim. Pellentesque quis ornare nulla. Donec ut porta turpis. Maecenas dictum ullamcorper lacus, et feugiat sem finibus viverra. Nullam interdum luctus mi. Morbi id vestibulum ante, ac pharetra felis. Praesent orci augue, interdum et finibus vel, varius vel lacus. Sed euismod, risus sed fringilla dictum, mi erat pharetra arcu, a sagittis nibh enim sit amet sem.
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+basePath: /
+schemes:
+  - https
+security:
+  - SamlAuth: []
+  - OtpJwtAuth: []
+responses:
+  UnauthorizedError:
+    description: Missing or invalid authentication information.
+produces:
+  - application/json
+
+tags:
+  - name: Authentication
+    description: OTP, API key and token
+    notes: |
+        <section class="ac-container">
+          <div class="opblock opblock-get">
+            <input id="ac-desc-auth" type="checkbox" />
+            <label for="ac-desc-auth" class="opblock-summary opblock-summary-description">
+              <span class="opblock-summary-method">DESCRIPTION</span>
+            </label>
+            <article class="ac-content">
+              <div class="opblock-description-wrapper">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sapien purus, feugiat eu molestie in, ultrices in enim. Pellentesque quis ornare nulla. Donec ut porta turpis. Maecenas dictum ullamcorper lacus, et feugiat sem finibus viverra. Nullam interdum luctus mi. Morbi id vestibulum ante, ac pharetra felis. Praesent orci augue, interdum et finibus vel, varius vel lacus. Sed euismod, risus sed fringilla dictum, mi erat pharetra arcu, a sagittis nibh enim sit amet sem.
+              </div>
+            </article>
+          </div>
+        </section>
+
+paths:
+  /authorized-only:
+    get:
+      summary: test authorization
+      description: |
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sapien purus, feugiat eu molestie in, ultrices in enim. Pellentesque quis ornare nulla. Donec ut porta turpis. Maecenas dictum ullamcorper lacus, et feugiat sem finibus viverra. Nullam interdum luctus mi. Morbi id vestibulum ante, ac pharetra felis. Praesent orci augue, interdum et finibus vel, varius vel lacus. Sed euismod, risus sed fringilla dictum, mi erat pharetra arcu, a sagittis nibh enim sit amet sem.
+      responses:
+        200:
+          description: Authorized
+        401:
+          description: Not Authorized
+      tags:
+        - Authentication
+
+parameters:
+  start_time:
+    name: start_time
+    in: query
+    required: true
+    type: string
+    format: YYYY-MM-DDThh:mm:ssTZD (e.g. 2017-01-15T19:20:30+08:00)
+    description: Start time of statistic
+    example: "2017-01-01T00:00:00+08:00"
+
+components:
+  securitySchemes:
+    OtpJwtAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+      tokenUrl: /api/auth/otp
+      service: /service/
+      otp: true
+      tokenExpiry: 10800
+    SamlAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+      saml: true
+      loginUrl: /api/auth/saml/authorize
+      logoutUrl: /api/auth/saml/logout
+
+  schemas:
+    User:
+      type: object
+      properties:
+        name:
+          type: string
+          description: unverified name
+          example: 100
+
