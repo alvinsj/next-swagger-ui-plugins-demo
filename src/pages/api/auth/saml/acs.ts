@@ -28,11 +28,11 @@ export default async function handler(
       res.setHeader('Set-Cookie', `session=${token}; Path=/; HttpOnly; SameSite=Strict; Secure`);
       
       // allow bearer token
-      return res.redirect(`/?a=${token}`);
+      return res.redirect(302, `/?a=${token}`);
     }
     throw new Error('ERR_USER_NOT_FOUND');
   } catch (e) {
     console.error('[FATAL] when parsing login response sent from okta', e);
-    return res.redirect('/');
+    return res.redirect(302, '/');
   }
 }
