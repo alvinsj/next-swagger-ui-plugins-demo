@@ -10,7 +10,6 @@
   },
   "dependencies": {
     "@authenio/samlify-node-xmllint": "^2.0.0",
-    "@authenio/samlify-xsd-schema-validator": "^1.0.3",
     "@types/jsonwebtoken": "^9.0.1",
     "@types/node": "18.15.11",
     "@types/react": "18.0.31",
