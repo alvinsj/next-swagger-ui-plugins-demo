@@ -18,6 +18,7 @@ export default function Home() {
         layout="ProductLayout"
         plugins={[chainWrapComponents(samlAuthPlugin, otpJwtAuthPlugin), productLayoutPlugin]}
         pluginsOptions={{
+          // FIXME this doesn't work 
           pluginLoadType: 'chain'
         }}
       />

@@ -3,7 +3,7 @@ import path from 'path';
 import { IdentityProvider } from 'samlify'
 
 import * as samlify from 'samlify';
-import * as validator from '@authenio/samlify-xsd-schema-validator';
+import * as validator from '@authenio/samlify-node-xmllint';
 samlify.setSchemaValidator(validator);
 
 const libDirectory = path.join(process.cwd(), 'src/lib');
