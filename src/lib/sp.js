@@ -15,7 +15,7 @@ const sp = new ServiceProvider({
   assertionConsumerService: [{
     isDefault: true,
     Binding: 'urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST',
-    Location: '/api/auth/saml/acs'
+    Location: `${process.env.NEXT_PUBLIC_ACS_URL || ''}/api/auth/saml/acs`
   }],
 });
 
