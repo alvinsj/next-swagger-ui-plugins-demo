@@ -28,7 +28,7 @@ export const SamlAuth = ({
           <Link disabled={disabled} className="btn modal-btn auth authorize" href={!disabled ? loginUrl : {}}>
             Start
           </Link> 
-          : <Link className="btn modal-btn auth authorize" as={'div'} onClick={handleLogoutClick}>
+          : <Link className="btn modal-btn auth authorize" href={{}} onClick={handleLogoutClick}>
             Logout
           </Link>}
       </Row>
