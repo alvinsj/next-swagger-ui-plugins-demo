@@ -16,14 +16,14 @@ export const SamlAuth = ({
   const Row = getComponent("Row")
 
   // hide when it's authorized by other method
-  if(authorized.size > 0 && !isAuthenticated) return <></>
+  const disabled = authorized.size > 0 && !isAuthenticated
 
   return (
     <div>
       <Row>
         <strong>SAML Login</strong>
         { !isAuthenticated ? 
-          <Link className="btn modal-btn auth authorize" href={loginUrl}>
+          <Link disabled={disabled} className="btn modal-btn auth authorize" href={!disabled ? loginUrl : {}}>
             Start
           </Link> 
           : <Link className="btn modal-btn auth authorize" href={logoutUrl}>

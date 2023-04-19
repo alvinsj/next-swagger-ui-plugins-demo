@@ -81,6 +81,7 @@ export default class OtpJwtAuth extends React.Component {
     let isAuthorized = !!authorizedAuth.get(name)
     let isOtpSent = !!otpJwtAuthSelectors.isOtpSent()
     let errors = errSelectors.allErrors().filter( err => err.get("authId") === name)
+    let disabled = authorizedAuth.size > 0 && !isAuthorized
 
     return (
       <>
@@ -96,7 +97,7 @@ export default class OtpJwtAuth extends React.Component {
                    required="required"
                    data-name="email"
                    onChange={ this.onChange }
-                   disabled={ isAuthorized } />
+                   disabled={ isAuthorized || disabled } />
           </Col>
         </Row>
         <Row>
@@ -108,7 +109,7 @@ export default class OtpJwtAuth extends React.Component {
                    required="required"
                    data-name="otp"
                    onChange={ this.onChange }
-                   disabled={ isAuthorized } />
+                   disabled={ isAuthorized || disabled } />
           </Col>
         </Row>
         {
@@ -131,8 +132,8 @@ export default class OtpJwtAuth extends React.Component {
         <div className="auth-btn-wrapper">
         { isAuthorized ? <Button className="btn modal-btn auth authorize" onClick={ this.logout }>Logout</Button>
                        : <div>
-                           <Button className="btn modal-btn auth send-otp" onClick={ this.sendOtp } disabled={ !this.state.email }>Send OTP</Button>
-                           <Button className="btn modal-btn auth authorize" onClick={ this.authorize } disabled={ !this.state.email || !this.state.otp }>Authorize</Button>
+                           <Button className="btn modal-btn auth send-otp" onClick={ this.sendOtp } disabled={ !this.state.email || disabled }>Send OTP</Button>
+                           <Button className="btn modal-btn auth authorize" onClick={ this.authorize } disabled={ !this.state.email || !this.state.otp || disabled }>Authorize</Button>
                          </div>
         }
         </div>
