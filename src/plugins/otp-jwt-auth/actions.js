@@ -1,6 +1,7 @@
 
 import urljoin from "url-join"
 
+export const SAVE_INPUTS = "save_inputs"
 export const SHOW_AUTH_POPUP = "show_popup"
 export const RECEIVE_OTP = "receive_otp"
 export const AUTHORIZE = "authorize"
@@ -17,8 +18,23 @@ export const receiveOtp = (payload) => {
   }
 }
 
-export const sendOtp = ( auth ) => ( { fn, authActions, errActions } ) => {
-  authActions.receiveOtp(false)
+export const saveInputs = (payload) => {
+  return {
+    type: SAVE_INPUTS,
+    payload: payload
+  }
+}
+
+export const logout = (names) => ({ otpJwtAuthActions, authActions }) => {
+  otpJwtAuthActions.receiveOtp(false)
+  otpJwtAuthActions.saveInputs({})
+
+  authActions.logout(names)
+}
+
+export const sendOtp = ( auth ) => ( { fn, otpJwtAuthActions, errActions } ) => {
+  otpJwtAuthActions.receiveOtp(false)
+  otpJwtAuthActions.saveInputs(auth)
 
   let { schema, name, email } = auth
 
@@ -61,7 +77,7 @@ export const sendOtp = ( auth ) => ( { fn, authActions, errActions } ) => {
       return
     }
 
-    authActions.receiveOtp(true)
+    otpJwtAuthActions.receiveOtp(true)
   })
   .catch(e => {
     let err = new Error(e)
@@ -76,8 +92,9 @@ export const sendOtp = ( auth ) => ( { fn, authActions, errActions } ) => {
   })
 }
 
-export const authorizeOtpToken = ( auth ) => ( { fn, authActions, errActions } ) => {
-  authActions.receiveOtp(false)
+export const authorizeOtpToken = ( auth ) => ( { fn, otpJwtAuthActions, authActions, errActions } ) => {
+  otpJwtAuthActions.receiveOtp(false)
+  otpJwtAuthActions.saveInputs(auth)
 
   let { schema, name, email, otp } = auth
 

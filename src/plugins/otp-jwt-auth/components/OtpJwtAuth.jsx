@@ -14,14 +14,15 @@ export default class OtpJwtAuth extends React.Component {
   constructor(props, context) {
     super(props, context)
 
-    const system = props.getSystem()
-    this.errActions = system.errActions
-    this.authActions = system.authActions
+    const { otpJwtAuthSelectors, errActions, otpJwtAuthActions } = props.getSystem()
 
-    let { name, schema, authorized } = this.props
-    let auth = authorized && authorized.get(name)
-    let email = auth && auth.get("email") || ""
-    let otp = auth && auth.get("otp") || ""
+    this.errActions = errActions
+    this.otpJwtAuthActions = otpJwtAuthActions
+
+    let { name, schema } = this.props
+
+    let email = otpJwtAuthSelectors.email() || ""
+    let otp = otpJwtAuthSelectors.otp()|| ""
 
     this.state = {
       name,
@@ -33,19 +34,19 @@ export default class OtpJwtAuth extends React.Component {
 
   sendOtp = () => {
     let { name } = this.props
-    let { authActions, errActions } = this
+    let { otpJwtAuthActions, errActions } = this
 
     this.setState({ otp: ""})
     errActions.clear({ authId: name })
-    authActions.sendOtp(this.state)
+    otpJwtAuthActions.sendOtp(this.state)
   }
 
   authorize = () => {
     let { name } = this.props
-    let { authActions, errActions } = this
+    let { otpJwtAuthActions, errActions } = this
 
     errActions.clear({ authId: name })
-    authActions.authorizeOtpToken(this.state)
+    otpJwtAuthActions.authorizeOtpToken(this.state)
   }
 
   onChange =(e) => {
@@ -60,11 +61,11 @@ export default class OtpJwtAuth extends React.Component {
   logout =(e) => {
     e.preventDefault()
     let { name } = this.props
-    let { authActions, errActions } = this
+    let { otpJwtAuthActions, errActions } = this
 
     this.setState({ email: "", otp: ""})
     errActions.clear({ authId: name })
-    authActions.logout([ name ])
+    otpJwtAuthActions.logout([ name ])
   }
 
   render() {
@@ -74,10 +75,11 @@ export default class OtpJwtAuth extends React.Component {
     const Col = getComponent("Col")
     const Button = getComponent("Button")
     const AuthError = getComponent("authError")
+    const { otpJwtAuthSelectors } = getSystem()
 
     let authorizedAuth = authSelectors.authorized()
     let isAuthorized = !!authorizedAuth.get(name)
-    let isOtpSent = !!authorizedAuth.get("otpSent")
+    let isOtpSent = !!otpJwtAuthSelectors.isOtpSent()
     let errors = errSelectors.allErrors().filter( err => err.get("authId") === name)
 
     return (

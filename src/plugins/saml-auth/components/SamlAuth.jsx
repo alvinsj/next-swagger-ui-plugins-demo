@@ -15,6 +15,9 @@ export const SamlAuth = ({
   const logoutUrl = schema.get('logoutUrl')
   const Row = getComponent("Row")
 
+  // hide when it's authorized by other method
+  if(authorized.size > 0 && !isAuthenticated) return <></>
+
   return (
     <div>
       <Row>
@@ -24,7 +27,7 @@ export const SamlAuth = ({
             Start
           </Link> 
           : <Link className="btn modal-btn auth authorize" href={logoutUrl}>
-            Start
+            Logout
           </Link>}
       </Row>
     </div>
