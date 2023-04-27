@@ -4,17 +4,23 @@
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "license": "MIT",
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "build": "tsup ./index.jsx --format cjs",
+    "build": "tsup ./index.jsx --format iife,cjs,esm",
     "lint": "eslint \"**/*.ts*\"",
     "dev": "npm run build -- --watch"
+  },
+  "peerDependencies": {
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
   },
   "devDependencies": {
     "@types/react": "18.2.0",
     "@types/react-dom": "18.2.0",
     "eslint": "^7.32.0",
     "eslint-config-custom": "*",
-    "react": "18.2.0",
     "tsconfig": "*",
     "typescript": "^4.5.2"
   }
