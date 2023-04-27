@@ -3,7 +3,6 @@ import PropTypes from "prop-types"
 
 import Email from "./email.svg"
 import Logo from "./logo_small.png"
-import Image from "next/image"
 
 export default class Topbar extends React.Component {
 
@@ -123,7 +122,7 @@ export default class Topbar extends React.Component {
       <div className="topbar">
         <div className="wrapper">
           <div className="topbar-wrapper">
-            <Image className="app-logo" { ...Logo } alt="Application logo" />
+            <img className="app-logo" { ...Logo } alt="Application logo" />
             <div className="email-copyright">
               { email ? (
                   <address className="email-container">

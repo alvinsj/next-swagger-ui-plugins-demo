@@ -1,5 +1,5 @@
 import React from 'react'
-import Topbar from "@/plugins/product-layout/components/Topbar"
+import Topbar from "./Topbar"
 
 class ProductLayout extends React.Component {
   render() {

@@ -12,7 +12,11 @@
     "build": {
       "outputs": [
         ".next/**",
-        "!.next/cache/**"
+        "!.next/cache/**",
+        "dist/**"
+      ],
+      "dependsOn": [
+        "^build"
       ]
     },
     "lint": {},

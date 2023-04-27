@@ -9,6 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "otp-jwt-auth": "*",
+    "saml-auth": "*",
+    "product-layout": "*",
     "@authenio/samlify-node-xmllint": "^2.0.0",
     "@types/jsonwebtoken": "^9.0.1",
     "@types/node": "18.15.11",
