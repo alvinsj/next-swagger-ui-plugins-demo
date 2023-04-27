@@ -8,7 +8,7 @@
     "dist"
   ],
   "scripts": {
-    "build": "tsup ./index.jsx --format iife,cjs,esm",
+    "build": "tsup ./index.jsx --format iife,cjs,esm --replaceNodeEnv",
     "lint": "eslint \"**/*.ts*\"",
     "dev": "npm run build -- --watch"
   },
