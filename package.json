@@ -11,15 +11,13 @@
     "eslint": "^7.32.0",
     "eslint-config-custom": "*",
     "prettier": "^2.5.1",
-    "turbo": "latest"
+    "turbo": "latest",
+    "tsup": "^6.7.0"
   },
   "name": "next-turbo-swagger-plugins-demo",
   "packageManager": "npm@9.6.2",
   "workspaces": [
     "apps/*",
     "packages/*"
-  ],
-  "dependencies": {
-    "tsup": "^6.7.0"
-  }
+  ]
 }
