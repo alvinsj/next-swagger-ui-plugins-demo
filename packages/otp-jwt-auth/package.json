@@ -10,7 +10,9 @@
   "scripts": {
     "build": "tsup ./index.jsx --format iife,cjs,esm --replaceNodeEnv",
     "lint": "eslint \"**/*.ts*\"",
-    "dev": "npm run build -- --watch"
+    "dev": "npm run build -- --watch",
+    "test": "jest",
+    "test:watch": "jest --watch"
   },
   "peerDependencies": {
     "react": "18.2.0",
