@@ -1,6 +1,5 @@
 import React, { useCallback } from 'react';
 import PropTypes from 'prop-types';
-import Link from 'next/link';
 
 export const SamlAuth = ({
   name, 
@@ -18,19 +17,19 @@ export const SamlAuth = ({
 
   // hide when it's authorized by other method
   const disabled = authorized.size > 0 && !isAuthenticated
-  const handleLogoutClick = useCallback(() => authActions.logout([name]), [authActions, name])
+  const handleLogoutClick = () => authActions.logout([name])
 
   return (
     <div>
       <Row>
         <strong>SAML Login</strong>
         { !isAuthenticated ? 
-          <Link disabled={disabled} className="btn modal-btn auth authorize" href={!disabled ? loginUrl : {}}>
+          <a disabled={disabled} className="btn modal-btn auth authorize" href={!disabled ? loginUrl : {}}>
             Start
-          </Link> 
-          : <Link className="btn modal-btn auth authorize" href={{}} onClick={handleLogoutClick}>
+          </a> 
+          : <a className="btn modal-btn auth authorize" href={{}} onClick={handleLogoutClick}>
             Logout
-          </Link>}
+          </a>}
       </Row>
     </div>
   )
