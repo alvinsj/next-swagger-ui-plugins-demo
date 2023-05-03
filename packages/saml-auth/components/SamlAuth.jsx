@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 
 export const SamlAuth = ({
@@ -27,7 +27,7 @@ export const SamlAuth = ({
           <a disabled={disabled} className="btn modal-btn auth authorize" href={!disabled ? loginUrl : {}}>
             Start
           </a> 
-          : <a className="btn modal-btn auth authorize" href={{}} onClick={handleLogoutClick}>
+          : <a className="btn modal-btn auth authorize" href={logoutUrl} onClick={handleLogoutClick}>
             Logout
           </a>}
       </Row>

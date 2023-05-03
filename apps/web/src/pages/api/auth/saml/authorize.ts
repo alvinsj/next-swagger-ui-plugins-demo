@@ -6,6 +6,6 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  const { id, context: redirectUrl } = await sp.createLoginRequest(idp, 'redirect'); 
+  const { context: redirectUrl } = await sp.createLoginRequest(idp, 'redirect'); 
   return res.redirect(302, redirectUrl as string);
 }

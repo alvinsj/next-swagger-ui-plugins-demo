@@ -1,5 +1,4 @@
 import { RECEIVE_OTP, SAVE_INPUTS } from "./actions"
-import { Map, fromJS } from 'immutable'
 
 const reducers = {
   [RECEIVE_OTP]: (state, { type, payload }) => {

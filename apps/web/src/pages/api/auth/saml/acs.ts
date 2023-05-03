@@ -9,8 +9,8 @@ export default async function handler(
   res: NextApiResponse
 ) {
   try {
-    const { extract } = await sp.parseLoginResponse(idp, 'post', req);
-    const { login } = extract.attributes;
+    await sp.parseLoginResponse(idp, 'post', req);
+    // const { login } = extract.attributes;
     // get your system user
     const payload = {
       user_id: 'test-user-id',

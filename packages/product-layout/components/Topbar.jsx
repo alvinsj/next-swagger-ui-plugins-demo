@@ -96,7 +96,7 @@ export default class Topbar extends React.Component {
 
     const { urls } = getConfigs()
     let control = []
-    let formOnSubmit = null
+    // let formOnSubmit = null
 
     if(urls) {
       let rows = []
@@ -113,7 +113,7 @@ export default class Topbar extends React.Component {
       )
     }
     else {
-      formOnSubmit = this.downloadUrl
+      // formOnSubmit = this.downloadUrl
       control.push(<input className="download-url-input" type="text" onChange={ this.onUrlChange } value={this.state.url} disabled={isLoading} style={inputStyle} />)
       control.push(<Button className="download-url-button" onClick={ this.downloadUrl }>Explore</Button>)
     }
@@ -126,7 +126,7 @@ export default class Topbar extends React.Component {
             <div className="email-copyright">
               { email ? (
                   <address className="email-container">
-                    <Image className="email-icon" {...Email} alt="Email" />
+                    <img className="email-icon" {...Email} alt="Email" />
                     <a href={`mailto:${email}`}>{ email }</a>
                   </address>
                 ) : null
@@ -134,7 +134,7 @@ export default class Topbar extends React.Component {
               { copyright ? (
                   <div className="copyright-container">
                     <div className="copyright">{ copyright }</div>
-                    <Image className="copyright-logo" {...Logo } alt="Copyright logo" />
+                    <img className="copyright-logo" {...Logo } alt="Copyright logo" />
                   </div>
                 ) : null
               }

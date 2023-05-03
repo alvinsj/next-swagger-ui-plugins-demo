@@ -28,7 +28,7 @@ export const copyright = createSelector(
   spec => spec.get("copyright")
 )
 
-const productLayoutPlugin = (system) => {
+const productLayoutPlugin = () => {
   return {
     statePlugins: {
       spec: {

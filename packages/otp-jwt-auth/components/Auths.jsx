@@ -58,13 +58,13 @@ export default class Auths extends React.Component {
     let { definitions, getComponent, authSelectors, errSelectors } = this.props
     const AuthItem = getComponent("AuthItem")
     const Oauth2 = getComponent("oauth2", true)
-    const Button = getComponent("Button")
+    // const Button = getComponent("Button")
 
     let authorized = authSelectors.authorized()
 
-    let authorizedAuth = definitions.filter( (definition, key) => {
-      return !!authorized.get(key)
-    })
+    // let authorizedAuth = definitions.filter( (definition, key) => {
+    //   return !!authorized.get(key)
+    // })
 
     let nonOauthDefinitions = definitions.filter( schema => schema.get("type") !== "oauth2")
     let oauthDefinitions = definitions.filter( schema => schema.get("type") === "oauth2")

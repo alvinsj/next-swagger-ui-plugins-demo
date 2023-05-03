@@ -32,7 +32,7 @@ export function preauthorizeSaml(system, key, value) {
   })
 }
 
-const samlAuthPlugin = (system) => {
+const samlAuthPlugin = () => {
   return {
     wrapComponents: {
       AuthItem: wrapAuthItem
