@@ -21,7 +21,7 @@
     "tsup": "^6.7.0",
     "turbo": "latest"
   },
-  "name": "next-turbo-swagger-plugins-demo",
+  "name": "swagger-ui-plugins-monorepo",
   "packageManager": "npm@9.6.2",
   "workspaces": [
     "apps/*",
