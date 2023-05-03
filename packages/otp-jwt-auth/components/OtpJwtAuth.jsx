@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 export default class OtpJwtAuth extends React.Component {
   static propTypes = {
-    name: PropTypes.string,
+    name: PropTypes.string.isRequired,
     authorized: PropTypes.object,
     getComponent: PropTypes.func.isRequired,
     schema: PropTypes.object.isRequired,
@@ -80,6 +80,7 @@ export default class OtpJwtAuth extends React.Component {
     let authorizedAuth = authSelectors.authorized()
     let isAuthorized = !!authorizedAuth.get(name)
     let isOtpSent = !!otpJwtAuthSelectors.isOtpSent()
+
     let errors = errSelectors.allErrors().filter( err => err.get("authId") === name)
     let disabled = authorizedAuth.size > 0 && !isAuthorized
 
@@ -113,7 +114,7 @@ export default class OtpJwtAuth extends React.Component {
           </Col>
         </Row>
         {
-          (isOtpSent || errors.valueSeq().length > 0) && 
+          (isOtpSent || errors.valueSeq().size > 0) && 
             <div className="auth-msg-wrapper">
               {
                 errors.valueSeq().map( (error, key) => {

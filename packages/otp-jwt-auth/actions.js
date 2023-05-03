@@ -46,7 +46,7 @@ export const sendOtp = ( auth ) => ( { fn, otpJwtAuthActions, errActions } ) => 
     "Content-Type": "application/json"
   }
 
-  fn.fetch({
+  return fn.fetch({
     url: fetchUrl,
     method: "post",
     headers,
@@ -112,7 +112,7 @@ export const authorizeOtpToken = ( auth ) => ( { fn, otpJwtAuthActions, authActi
     "Content-Type": "application/json"
   }
 
-  fn.fetch({
+  return fn.fetch({
     url: fetchUrl,
     method: "post",
     headers,
@@ -154,15 +154,15 @@ export const authorizeOtpToken = ( auth ) => ( { fn, otpJwtAuthActions, authActi
       }
     })
   })
-  .catch(e => {
+  .catch(e => {    
     let err = new Error(e)
     err.message = "Unauthorized. " + e.response.body.message
 
-    errActions.newAuthErr( {
+    errActions.newAuthErr({
       authId: name,
       level: "",
       source: "",
       message: err.message
-    } )
+    })
   })
 }

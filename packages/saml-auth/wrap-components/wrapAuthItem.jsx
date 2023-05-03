@@ -1,6 +1,6 @@
 import React from "react"
 
-const wrapAuthItem = (Ori, system) => function WrappedSamlAuthItem({ Ori, ...props }) {
+const wrapAuthItem = (Ori, system) => function WrappedSamlAuthItem({ ...props }) {
   const {
     schema, getComponent, errSelectors, authorized, onAuthChange, name
   } = props
@@ -21,10 +21,7 @@ const wrapAuthItem = (Ori, system) => function WrappedSamlAuthItem({ Ori, ...pro
               onChange={ onAuthChange }
               getSystem={system.getSystem} />
   }
-  else if(!Ori) return <div />
-  else {
-    return <Ori {...props} />
-  }
+
 }
 
 export default wrapAuthItem

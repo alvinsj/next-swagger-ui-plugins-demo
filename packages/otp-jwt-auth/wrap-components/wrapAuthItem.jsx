@@ -1,6 +1,6 @@
 import React from "react"
 
-const wrapAuthItem = (Ori, system) => function WrappedOtpJwtAuthItem({ Ori, ...props }) {
+const wrapAuthItem = (Ori, system) => function WrappedOtpJwtAuthItem({ ...props }) {
   const {
     schema, getComponent, errSelectors, authorized, onAuthChange, name
   } = props
@@ -20,10 +20,6 @@ const wrapAuthItem = (Ori, system) => function WrappedOtpJwtAuthItem({ Ori, ...p
               getComponent={ getComponent }
               onChange={ onAuthChange }
               getSystem={system.getSystem} />
-  }
-  else if(!Ori) return <div />
-  else {
-    return <Ori {...props} />
   }
 }
 
