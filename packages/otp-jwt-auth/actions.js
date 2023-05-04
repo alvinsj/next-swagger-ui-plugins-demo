@@ -1,5 +1,6 @@
 
 import urljoin from "url-join"
+import { Map } from "immutable"
 
 export const SAVE_INPUTS = "save_inputs"
 export const SHOW_AUTH_POPUP = "show_popup"
@@ -38,9 +39,14 @@ export const sendOtp = ( auth ) => ( { fn, otpJwtAuthActions, errActions } ) => 
 
   let { schema, name, email } = auth
 
-  let fetchUrl = urljoin(schema.get("tokenUrl"), schema.get("requestOtpPath") || "/otps")
-  let body = JSON.stringify({ email })
+  let method = schema.get("requestOtpMethod") || "post"
+  let requestOtpQuery = schema.get('requestOtpQuery') || new Map()
+  let query = requestOtpQuery.toJS()
 
+  let fetchUrl = appeandQuery(
+    urljoin(schema.get("tokenUrl"), schema.get("requestOtpPath") || "/otps"), query
+  )
+  let body = JSON.stringify({ email })
   let headers = {
     "Accept":"application/json, text/plain, */*",
     "Content-Type": "application/json"
@@ -48,9 +54,9 @@ export const sendOtp = ( auth ) => ( { fn, otpJwtAuthActions, errActions } ) => 
 
   return fn.fetch({
     url: fetchUrl,
-    method: "post",
+    method: method || "post",
     headers,
-    body
+    ...(method === 'get' || method === 'head' ? {} : {body})
   })
   .then(function (response) {
     let response_data = JSON.parse(response.data)
@@ -92,20 +98,33 @@ export const sendOtp = ( auth ) => ( { fn, otpJwtAuthActions, errActions } ) => 
   })
 }
 
+const appeandQuery = (url, query) => {
+  if (query) {
+    url = `${url}?${new URLSearchParams(query)}`
+  }
+  return url
+}
+
+
 export const authorizeOtpToken = ( auth ) => ( { fn, otpJwtAuthActions, authActions, errActions } ) => {
   otpJwtAuthActions.receiveOtp(false)
   otpJwtAuthActions.saveInputs(auth)
 
   let { schema, name, email, otp } = auth
 
-  let fetchUrl = urljoin(schema.get("tokenUrl"), schema.get("authPath") || "/tokens")
+  let method = schema.get("authMethod") || "post"
+  let authQuery = schema.get('authQuery') 
+  let query = authQuery && authQuery.toJS()
 
-  let query = {
-    service: schema.get("service"),
-    expiry: schema.get("tokenExpiry")
-  }
+  let fetchUrl = appeandQuery(
+    urljoin(schema.get("tokenUrl"), schema.get("authPath") || "/tokens"),
+    query
+  )
+  
+  let authBody = schema.get('authBody') || new Map()
+  let extraBody = authBody.toJS()
 
-  let body = JSON.stringify({ email, otp })
+  let body = JSON.stringify({ email, otp, ...extraBody })
 
   let headers = {
     "Accept":"application/json, text/plain, */*",
@@ -114,10 +133,9 @@ export const authorizeOtpToken = ( auth ) => ( { fn, otpJwtAuthActions, authActi
 
   return fn.fetch({
     url: fetchUrl,
-    method: "post",
+    method: method || "post",
     headers,
-    query,
-    body
+    ...(method === 'get' || method === 'head' ? {} : {body})
   })
   .then(function (response) {
     let response_data = JSON.parse(response.data)
