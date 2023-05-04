@@ -21,5 +21,3 @@ exports[`wrapAuthItem returns an OtpJwtAuth component 1`] = `
   id="OtpJwtAuth"
 />
 `;
-
-exports[`wrapAuthItem returns null component for others 1`] = `null`;
