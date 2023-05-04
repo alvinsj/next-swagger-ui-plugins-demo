@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "main": "index.js",
   "license": "MIT",
+  "private": true,
   "dependencies": {
     "@jest/globals": "^29.5.0",
     "eslint-config-next": "latest",
