@@ -7,9 +7,8 @@ export const chainWrapComponents = (first, ...plugins) => (system) =>
     const { wrapComponents: oriWrapComponents, ...oriPluginConfig } = ori
 
     return {
-
       wrapComponents: Object.entries(wrapComponents).reduce((merged, [key, wrapComponent]) => {
-        const chained = oriWrapComponents?.[key] ?
+        const chained = oriWrapComponents[key] ?
           (ori, sys) => function Chained(props) {
 
             const First = wrapComponent(ori, sys)
