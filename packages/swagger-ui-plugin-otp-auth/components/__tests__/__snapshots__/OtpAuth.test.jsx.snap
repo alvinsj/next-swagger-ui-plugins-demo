@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<OtpJwtAuth /> renders error messages 1`] = `
+exports[`<OtpAuth /> renders error messages 1`] = `
 [
   <mock-element
     data-props={{}}
@@ -115,7 +115,7 @@ exports[`<OtpJwtAuth /> renders error messages 1`] = `
 ]
 `;
 
-exports[`<OtpJwtAuth /> renders form 1`] = `
+exports[`<OtpAuth /> renders form 1`] = `
 [
   <mock-element
     data-props={{}}
@@ -216,7 +216,7 @@ exports[`<OtpJwtAuth /> renders form 1`] = `
 ]
 `;
 
-exports[`<OtpJwtAuth /> renders logout 1`] = `
+exports[`<OtpAuth /> renders logout 1`] = `
 [
   <mock-element
     data-props={{}}
@@ -302,7 +302,7 @@ exports[`<OtpJwtAuth /> renders logout 1`] = `
 ]
 `;
 
-exports[`<OtpJwtAuth /> renders otp sent message 1`] = `
+exports[`<OtpAuth /> renders otp sent message 1`] = `
 [
   <mock-element
     data-props={{}}

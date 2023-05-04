@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "otp-jwt-auth": "*",
+    "swagger-ui-plugin-otp-auth": "*",
     "saml-auth": "*",
     "product-layout": "*",
     "@authenio/samlify-node-xmllint": "^2.0.0",

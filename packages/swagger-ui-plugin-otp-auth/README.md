@@ -1,10 +1,10 @@
-# otp-jwt-auth swagger-ui plugin
+# swagger-ui-plugin-otp-auth swagger-ui plugin
 
 ## swagger configuration
 ```yaml
 components:
   securitySchemes:
-    OtpJwtAuth:
+    OtpAuth:
       # base config
       type: http
       scheme: bearer
@@ -24,5 +24,5 @@ components:
         expiry: 10800
 
 security:
-  - OtpJwtAuth: []
+  - OtpAuth: []
 ```

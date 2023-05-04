@@ -1,7 +1,7 @@
 ---
 "chain-wrap-components": patch
 "product-layout": patch
-"otp-jwt-auth": patch
+"swagger-ui-plugin-otp-auth": patch
 "saml-auth": patch
 ---
 

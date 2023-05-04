@@ -1,9 +1,9 @@
 import React from 'react'
-import OtpJwtAuth from '../OtpJwtAuth'
+import OtpAuth from '../OtpAuth'
 import renderer from 'react-test-renderer'
 import { Map } from 'immutable'
 
-describe('<OtpJwtAuth />', () => {
+describe('<OtpAuth />', () => {
   const otpJwtAuthSelectors = { 
     email: () => 'test@example.com', 
     otp: () => 'example-otp',
@@ -31,11 +31,11 @@ describe('<OtpJwtAuth />', () => {
   it('renders form', () => {
     const tree = renderer
     .create(
-      <OtpJwtAuth 
+      <OtpAuth 
         {...system}
         getSystem={() => system}
         schema={{}}
-        name="OtpJwtAuth"
+        name="OtpAuth"
       />)
     .toJSON()
 
@@ -46,11 +46,11 @@ describe('<OtpJwtAuth />', () => {
     otpJwtAuthSelectors.isOtpSent = () => true
     const tree = renderer
     .create(
-      <OtpJwtAuth 
+      <OtpAuth 
         {...system}
         getSystem={() => system}
         schema={{}}
-        name="OtpJwtAuth"
+        name="OtpAuth"
       />)
     .toJSON()
 
@@ -59,15 +59,15 @@ describe('<OtpJwtAuth />', () => {
 
   it('renders error messages', () => {
     otpJwtAuthSelectors.isOtpSent = () => false
-    errSelectors.allErrors = () => new Map({'error': {get: () => 'OtpJwtAuth'}})
+    errSelectors.allErrors = () => new Map({'error': {get: () => 'OtpAuth'}})
 
     const tree = renderer
       .create(
-        <OtpJwtAuth 
+        <OtpAuth 
           {...system}
           getSystem={() => system}
           schema={{}}
-          name="OtpJwtAuth"
+          name="OtpAuth"
         />)
       .toJSON()
 
@@ -81,11 +81,11 @@ describe('<OtpJwtAuth />', () => {
 
     const tree = renderer
       .create(
-        <OtpJwtAuth 
+        <OtpAuth 
           {...system}
           getSystem={() => system}
           schema={{}}
-          name="OtpJwtAuth"
+          name="OtpAuth"
         />)
       .toJSON()
 

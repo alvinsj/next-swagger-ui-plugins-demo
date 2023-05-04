@@ -1,4 +1,4 @@
-import OtpJwtAuth from './components/OtpJwtAuth'
+import OtpAuth from './components/OtpAuth'
 import Auths from './components/Auths'
 import wrapAuthItem from './wrap-components/wrapAuthItem'
 
@@ -20,7 +20,7 @@ const otpJwtAuthPlugin = () => {
     },
     components: {
       auths: Auths,
-      OtpJwtAuth: OtpJwtAuth,
+      OtpAuth: OtpAuth,
     }
   }
 }

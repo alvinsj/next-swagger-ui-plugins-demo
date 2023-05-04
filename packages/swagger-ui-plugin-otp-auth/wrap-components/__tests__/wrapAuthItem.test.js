@@ -27,13 +27,13 @@ describe("wrapAuthItem", () => {
     // match snapshot
     const tree = renderer
       .create(
-        <WrappedComponent schema={new Map()} name="OtpJwtAuth" {...system} />
+        <WrappedComponent schema={new Map()} name="OtpAuth" {...system} />
       )
       .toJSON()
     expect(tree).toMatchInlineSnapshot(`null`)
   })
 
-  it("returns an OtpJwtAuth component", () => {
+  it("returns an OtpAuth component", () => {
     expect(WrappedComponent).toBeInstanceOf(Function)
 
     // match snapshot
@@ -41,7 +41,7 @@ describe("wrapAuthItem", () => {
       .create(
         <WrappedComponent
           schema={new Map({ type: "http", scheme: "bearer", otp: true })}
-          name="OtpJwtAuth"
+          name="OtpAuth"
           {...system}
         />
       )

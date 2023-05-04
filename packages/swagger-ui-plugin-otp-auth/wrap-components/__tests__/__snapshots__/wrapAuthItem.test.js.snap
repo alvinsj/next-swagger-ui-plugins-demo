@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`wrapAuthItem returns an OtpJwtAuth component 1`] = `
+exports[`wrapAuthItem returns an OtpAuth component 1`] = `
 <mock-component
   data-props={
     {
@@ -9,7 +9,7 @@ exports[`wrapAuthItem returns an OtpJwtAuth component 1`] = `
       "errSelectors": {},
       "getComponent": [Function],
       "getSystem": [Function],
-      "name": "OtpJwtAuth",
+      "name": "OtpAuth",
       "onChange": undefined,
       "schema": Immutable.Map {
         "type": "http",
@@ -18,6 +18,6 @@ exports[`wrapAuthItem returns an OtpJwtAuth component 1`] = `
       },
     }
   }
-  id="OtpJwtAuth"
+  id="OtpAuth"
 />
 `;

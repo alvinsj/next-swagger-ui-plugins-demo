@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-export default class OtpJwtAuth extends React.Component {
+export default class OtpAuth extends React.Component {
   static propTypes = {
     name: PropTypes.string.isRequired,
     authorized: PropTypes.object,

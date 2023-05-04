@@ -37,7 +37,7 @@ schemes:
   - https
 security:
   - SamlAuth: []
-  - OtpJwtAuth: []
+  - OtpAuth: []
 responses:
   UnauthorizedError:
     description: Missing or invalid authentication information.
@@ -88,7 +88,7 @@ parameters:
 
 components:
   securitySchemes:
-    OtpJwtAuth:
+    OtpAuth:
       type: http
       scheme: bearer
       otp: true

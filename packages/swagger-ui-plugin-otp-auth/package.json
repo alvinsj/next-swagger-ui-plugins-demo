@@ -1,5 +1,5 @@
 {
-  "name": "otp-jwt-auth",
+  "name": "swagger-ui-plugin-otp-auth",
   "version": "0.0.0",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
