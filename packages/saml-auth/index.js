@@ -32,6 +32,8 @@ export function preauthorizeSaml(system, key, value) {
   })
 }
 
+let engaged = false
+
 const samlAuthPlugin = () => {
   return {
     wrapComponents: {
@@ -40,16 +42,32 @@ const samlAuthPlugin = () => {
     components: {
       SamlAuth,
     },
-    afterLoad: (system) => {    
-      // testing purpose only 
-      // This is a hack to get the auth token from the URL and preauthorize the SAMLAuth
-      setTimeout(() => {
-        const authToken = getAuthToken(window.location.search, 'a')
-        if (authToken) {
-          preauthorizeSaml(system.getSystem(), 'SamlAuth', authToken)
-          window.history.pushState({}, document.title, window.location.pathname)
+    // authorize on saml response. 
+    // refer to https://github.com/swagger-api/swagger-ui/blob/master/src/core/plugins/on-complete/index.js
+    statePlugins: {
+      spec: {
+        wrapActions: {
+          updateSpec: (ori) => (...args) => {
+            engaged = true
+            return ori(...args)
+          },
+          updateJsonSpec: (ori, system) => (...args) => {
+            if(engaged) {
+              const authorize =  () => {
+                const authToken = getAuthToken(window.location.search, 'SAMLToken')
+                if (authToken) {
+                  preauthorizeSaml(system.getSystem(), 'SamlAuth', authToken)
+                  window.history.pushState({}, document.title, window.location.pathname)
+                }
+               }
+              setTimeout(authorize, 0)
+              engaged = false
+            }
+
+            return ori(...args)
+          }
         }
-       }, 1000)
+      }
     }
   }
 }

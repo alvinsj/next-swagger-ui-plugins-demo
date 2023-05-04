@@ -28,7 +28,7 @@ export default async function handler(
       res.setHeader('Set-Cookie', `session=${token}; Path=/; HttpOnly; SameSite=Strict; Secure`)
       
       // allow bearer token
-      return res.redirect(302, `/?a=${token}`)
+      return res.redirect(302, `/?SAMLToken=${token}`)
     }
     throw new Error('ERR_USER_NOT_FOUND')
   } catch (e) {
