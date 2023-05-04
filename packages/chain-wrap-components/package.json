@@ -9,8 +9,10 @@
   ],
   "scripts": {
     "build": "tsup ./index.jsx --format iife,cjs,esm --replaceNodeEnv",
-    "lint": "eslint \"**/*.ts*\"",
-    "dev": "npm run build -- --watch"
+    "lint": "eslint \"**/*.@(js|jsx)\"",
+    "dev": "npm run build -- --watch",
+    "test": "jest --coverage",
+    "test:watch": "jest --watch"
   },
   "dependencies": {
     "deepmerge": "4.3.1"

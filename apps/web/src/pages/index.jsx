@@ -1,8 +1,8 @@
 
 import dynamic from 'next/dynamic'
-import otpJwtAuthPlugin from 'otp-jwt-auth'
-import productLayoutPlugin from 'product-layout'
-import samlAuthPlugin from 'saml-auth'
+import otpJwtAuthPlugin from 'swagger-ui-plugin-otp-auth'
+import productLayoutPlugin from 'swagger-ui-custom-layout'
+import samlAuthPlugin from 'swagger-ui-plugin-saml-auth'
 import deepMerge from 'deepmerge'
 
 // swagger-ui-react is not SSR compatible
@@ -44,7 +44,7 @@ export const chainWrapComponents = (first, ...plugins) => (system) =>
               {First && <First {...props} />}
               {Second && <Second {...props} />}
             </>
-          } : wrapComponent;
+          } : wrapComponent
 
         return {
           ...merged,

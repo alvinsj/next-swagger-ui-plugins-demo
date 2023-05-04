@@ -1,0 +1,420 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<OtpAuth /> renders error messages 1`] = `
+[
+  <mock-element
+    data-props={{}}
+    id="Row"
+  >
+    <strong>
+      OTP Login
+    </strong>
+  </mock-element>,
+  <mock-element
+    data-props={{}}
+    id="Row"
+  >
+    <label
+      htmlFor="jwt_email"
+    >
+      Email:
+    </label>
+    <mock-element
+      data-props={{}}
+      id="Col"
+    >
+      <mock-element
+        data-props={
+          {
+            "data-name": "email",
+            "disabled": false,
+            "id": "jwt_email",
+            "onChange": [Function],
+            "required": "required",
+            "type": "email",
+            "value": "test@example.com",
+          }
+        }
+        id="Input"
+      />
+    </mock-element>
+  </mock-element>,
+  <mock-element
+    data-props={{}}
+    id="Row"
+  >
+    <label
+      htmlFor="jwt_otp"
+    >
+      OTP:
+    </label>
+    <mock-element
+      data-props={{}}
+      id="Col"
+    >
+      <mock-element
+        data-props={
+          {
+            "data-name": "otp",
+            "disabled": false,
+            "id": "jwt_otp",
+            "onChange": [Function],
+            "required": "required",
+            "type": "text",
+            "value": "example-otp",
+          }
+        }
+        id="Input"
+      />
+    </mock-element>
+  </mock-element>,
+  <div
+    className="auth-msg-wrapper"
+  >
+    <mock-element
+      data-props={
+        {
+          "error": {
+            "get": [Function],
+          },
+        }
+      }
+      id="authError"
+    />
+  </div>,
+  <div
+    className="auth-btn-wrapper"
+  >
+    <div>
+      <mock-element
+        data-props={
+          {
+            "className": "btn modal-btn auth send-otp",
+            "disabled": false,
+            "onClick": [Function],
+          }
+        }
+        id="Button"
+      >
+        Send OTP
+      </mock-element>
+      <mock-element
+        data-props={
+          {
+            "className": "btn modal-btn auth authorize",
+            "disabled": false,
+            "onClick": [Function],
+          }
+        }
+        id="Button"
+      >
+        Authorize
+      </mock-element>
+    </div>
+  </div>,
+]
+`;
+
+exports[`<OtpAuth /> renders form 1`] = `
+[
+  <mock-element
+    data-props={{}}
+    id="Row"
+  >
+    <strong>
+      OTP Login
+    </strong>
+  </mock-element>,
+  <mock-element
+    data-props={{}}
+    id="Row"
+  >
+    <label
+      htmlFor="jwt_email"
+    >
+      Email:
+    </label>
+    <mock-element
+      data-props={{}}
+      id="Col"
+    >
+      <mock-element
+        data-props={
+          {
+            "data-name": "email",
+            "disabled": false,
+            "id": "jwt_email",
+            "onChange": [Function],
+            "required": "required",
+            "type": "email",
+            "value": "test@example.com",
+          }
+        }
+        id="Input"
+      />
+    </mock-element>
+  </mock-element>,
+  <mock-element
+    data-props={{}}
+    id="Row"
+  >
+    <label
+      htmlFor="jwt_otp"
+    >
+      OTP:
+    </label>
+    <mock-element
+      data-props={{}}
+      id="Col"
+    >
+      <mock-element
+        data-props={
+          {
+            "data-name": "otp",
+            "disabled": false,
+            "id": "jwt_otp",
+            "onChange": [Function],
+            "required": "required",
+            "type": "text",
+            "value": "example-otp",
+          }
+        }
+        id="Input"
+      />
+    </mock-element>
+  </mock-element>,
+  <div
+    className="auth-btn-wrapper"
+  >
+    <div>
+      <mock-element
+        data-props={
+          {
+            "className": "btn modal-btn auth send-otp",
+            "disabled": false,
+            "onClick": [Function],
+          }
+        }
+        id="Button"
+      >
+        Send OTP
+      </mock-element>
+      <mock-element
+        data-props={
+          {
+            "className": "btn modal-btn auth authorize",
+            "disabled": false,
+            "onClick": [Function],
+          }
+        }
+        id="Button"
+      >
+        Authorize
+      </mock-element>
+    </div>
+  </div>,
+]
+`;
+
+exports[`<OtpAuth /> renders logout 1`] = `
+[
+  <mock-element
+    data-props={{}}
+    id="Row"
+  >
+    <strong>
+      OTP Login
+    </strong>
+  </mock-element>,
+  <mock-element
+    data-props={{}}
+    id="Row"
+  >
+    <label
+      htmlFor="jwt_email"
+    >
+      Email:
+    </label>
+    <mock-element
+      data-props={{}}
+      id="Col"
+    >
+      <mock-element
+        data-props={
+          {
+            "data-name": "email",
+            "disabled": true,
+            "id": "jwt_email",
+            "onChange": [Function],
+            "required": "required",
+            "type": "email",
+            "value": "test@example.com",
+          }
+        }
+        id="Input"
+      />
+    </mock-element>
+  </mock-element>,
+  <mock-element
+    data-props={{}}
+    id="Row"
+  >
+    <label
+      htmlFor="jwt_otp"
+    >
+      OTP:
+    </label>
+    <mock-element
+      data-props={{}}
+      id="Col"
+    >
+      <mock-element
+        data-props={
+          {
+            "data-name": "otp",
+            "disabled": true,
+            "id": "jwt_otp",
+            "onChange": [Function],
+            "required": "required",
+            "type": "text",
+            "value": "example-otp",
+          }
+        }
+        id="Input"
+      />
+    </mock-element>
+  </mock-element>,
+  <div
+    className="auth-btn-wrapper"
+  >
+    <mock-element
+      data-props={
+        {
+          "className": "btn modal-btn auth authorize",
+          "onClick": [Function],
+        }
+      }
+      id="Button"
+    >
+      Logout
+    </mock-element>
+  </div>,
+]
+`;
+
+exports[`<OtpAuth /> renders otp sent message 1`] = `
+[
+  <mock-element
+    data-props={{}}
+    id="Row"
+  >
+    <strong>
+      OTP Login
+    </strong>
+  </mock-element>,
+  <mock-element
+    data-props={{}}
+    id="Row"
+  >
+    <label
+      htmlFor="jwt_email"
+    >
+      Email:
+    </label>
+    <mock-element
+      data-props={{}}
+      id="Col"
+    >
+      <mock-element
+        data-props={
+          {
+            "data-name": "email",
+            "disabled": false,
+            "id": "jwt_email",
+            "onChange": [Function],
+            "required": "required",
+            "type": "email",
+            "value": "test@example.com",
+          }
+        }
+        id="Input"
+      />
+    </mock-element>
+  </mock-element>,
+  <mock-element
+    data-props={{}}
+    id="Row"
+  >
+    <label
+      htmlFor="jwt_otp"
+    >
+      OTP:
+    </label>
+    <mock-element
+      data-props={{}}
+      id="Col"
+    >
+      <mock-element
+        data-props={
+          {
+            "data-name": "otp",
+            "disabled": false,
+            "id": "jwt_otp",
+            "onChange": [Function],
+            "required": "required",
+            "type": "text",
+            "value": "example-otp",
+          }
+        }
+        id="Input"
+      />
+    </mock-element>
+  </mock-element>,
+  <div
+    className="auth-msg-wrapper"
+  >
+    <div
+      style={
+        {
+          "backgroundColor": "#eeffee",
+          "color": "green",
+        }
+      }
+    >
+      <span>
+        OTP sent. Please check your email inbox.
+      </span>
+    </div>
+  </div>,
+  <div
+    className="auth-btn-wrapper"
+  >
+    <div>
+      <mock-element
+        data-props={
+          {
+            "className": "btn modal-btn auth send-otp",
+            "disabled": false,
+            "onClick": [Function],
+          }
+        }
+        id="Button"
+      >
+        Send OTP
+      </mock-element>
+      <mock-element
+        data-props={
+          {
+            "className": "btn modal-btn auth authorize",
+            "disabled": false,
+            "onClick": [Function],
+          }
+        }
+        id="Button"
+      >
+        Authorize
+      </mock-element>
+    </div>
+  </div>,
+]
+`;

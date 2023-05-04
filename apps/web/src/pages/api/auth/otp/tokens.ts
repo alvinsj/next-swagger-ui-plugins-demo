@@ -1,8 +1,8 @@
-import type { NextApiRequest, NextApiResponse } from 'next';
+import type { NextApiRequest, NextApiResponse } from 'next'
 
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  res.setHeader('Content-Type', 'application/json').send({token: 'secret-token!'});
+  res.setHeader('Content-Type', 'application/json').send({token: 'secret-token!'})
 }

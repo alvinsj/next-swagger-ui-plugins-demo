@@ -1,5 +1,5 @@
 import React from 'react'
-import deepMerge from "deepmerge";
+import deepMerge from "deepmerge"
 
 export const chainWrapComponents = (first, ...plugins) => (system) =>
   plugins.reduce((ori, plugin) => {
@@ -7,9 +7,8 @@ export const chainWrapComponents = (first, ...plugins) => (system) =>
     const { wrapComponents: oriWrapComponents, ...oriPluginConfig } = ori
 
     return {
-
       wrapComponents: Object.entries(wrapComponents).reduce((merged, [key, wrapComponent]) => {
-        const chained = oriWrapComponents?.[key] ?
+        const chained = oriWrapComponents[key] ?
           (ori, sys) => function Chained(props) {
 
             const First = wrapComponent(ori, sys)
@@ -19,7 +18,7 @@ export const chainWrapComponents = (first, ...plugins) => (system) =>
               {First && <First {...props} />}
               {Second && <Second {...props} />}
             </>
-          } : wrapComponent;
+          } : wrapComponent
 
         return {
           ...merged,
@@ -32,4 +31,4 @@ export const chainWrapComponents = (first, ...plugins) => (system) =>
     }
   }, first(system))
 
-  export default chainWrapComponents;
+  export default chainWrapComponents
