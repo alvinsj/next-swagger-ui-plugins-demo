@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`wrapAuthItem returns an SamlAuth component 1`] = `
+<mock-component
+  data-props={
+    {
+      "authSelectors": {},
+      "authorized": undefined,
+      "errSelectors": {},
+      "getComponent": [Function],
+      "getSystem": [Function],
+      "name": "SamlAuth",
+      "onChange": undefined,
+      "schema": Immutable.Map {
+        "type": "http",
+        "scheme": "bearer",
+        "saml": true,
+      },
+    }
+  }
+  id="SamlAuth"
+/>
+`;
