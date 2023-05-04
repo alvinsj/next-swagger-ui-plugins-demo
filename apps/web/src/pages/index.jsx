@@ -2,7 +2,7 @@
 import dynamic from 'next/dynamic'
 import otpJwtAuthPlugin from 'swagger-ui-plugin-otp-auth'
 import productLayoutPlugin from 'product-layout'
-import samlAuthPlugin from 'saml-auth'
+import samlAuthPlugin from 'swagger-ui-plugin-saml-auth'
 import deepMerge from 'deepmerge'
 
 // swagger-ui-react is not SSR compatible
