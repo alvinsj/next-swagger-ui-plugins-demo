@@ -3,6 +3,6 @@ const config = {
   transformIgnorePatterns: [
     "node_modules/(?!url-join)"
   ]
-};
+}
 
-module.exports = config;
+module.exports = config

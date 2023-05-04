@@ -3,7 +3,8 @@ module.exports = {
   plugins: ["jest"],
   rules: {
     "@next/next/no-html-link-for-pages": "off",
-    "@next/next/no-img-element": "off"
+    "@next/next/no-img-element": "off",
+    "semi": ["error", "never"]
   }, 
   parserOptions: {
     babelOptions: {

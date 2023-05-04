@@ -44,7 +44,7 @@ export const chainWrapComponents = (first, ...plugins) => (system) =>
               {First && <First {...props} />}
               {Second && <Second {...props} />}
             </>
-          } : wrapComponent;
+          } : wrapComponent
 
         return {
           ...merged,

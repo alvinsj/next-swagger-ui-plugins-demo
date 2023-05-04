@@ -18,7 +18,7 @@ describe('<OtpJwtAuth />', () => {
 
   const getComponent = (name) => 
     function GetComponent({children, ...props}) { 
-      return <mock-element className={name} data-props={props}>{children}</mock-element> 
+      return <mock-element id={name} data-props={props}>{children}</mock-element> 
     }
 
   const system = {
@@ -29,7 +29,6 @@ describe('<OtpJwtAuth />', () => {
   }
 
   it('renders form', () => {
-    
     const tree = renderer
     .create(
       <OtpJwtAuth 

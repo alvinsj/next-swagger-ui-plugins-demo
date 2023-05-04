@@ -1,5 +1,5 @@
 import React from 'react'
-import deepMerge from "deepmerge";
+import deepMerge from "deepmerge"
 
 export const chainWrapComponents = (first, ...plugins) => (system) =>
   plugins.reduce((ori, plugin) => {
@@ -19,7 +19,7 @@ export const chainWrapComponents = (first, ...plugins) => (system) =>
               {First && <First {...props} />}
               {Second && <Second {...props} />}
             </>
-          } : wrapComponent;
+          } : wrapComponent
 
         return {
           ...merged,
@@ -32,4 +32,4 @@ export const chainWrapComponents = (first, ...plugins) => (system) =>
     }
   }, first(system))
 
-  export default chainWrapComponents;
+  export default chainWrapComponents
