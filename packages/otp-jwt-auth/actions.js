@@ -40,13 +40,15 @@ export const sendOtp = ( auth ) => ( { fn, otpJwtAuthActions, errActions } ) => 
   let { schema, name, email } = auth
 
   let method = schema.get("requestOtpMethod") || "post"
-  let requestOtpQuery = schema.get('requestOtpQuery') || new Map()
-  let query = requestOtpQuery.toJS()
+  let requestOtpQuery = schema.get('requestOtpQuery') 
+  let query = requestOtpQuery && requestOtpQuery.toJS()
 
   let fetchUrl = appeandQuery(
     urljoin(schema.get("tokenUrl"), schema.get("requestOtpPath") || "/otps"), query
   )
-  let body = JSON.stringify({ email })
+  let authBody = schema.get('authBody') || new Map()
+  let extraBody = authBody.toJS()
+  let body = JSON.stringify({ email, ...extraBody})
   let headers = {
     "Accept":"application/json, text/plain, */*",
     "Content-Type": "application/json"
@@ -123,7 +125,6 @@ export const authorizeOtpToken = ( auth ) => ( { fn, otpJwtAuthActions, authActi
   
   let authBody = schema.get('authBody') || new Map()
   let extraBody = authBody.toJS()
-
   let body = JSON.stringify({ email, otp, ...extraBody })
 
   let headers = {
