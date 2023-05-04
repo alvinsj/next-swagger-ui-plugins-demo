@@ -9,7 +9,7 @@
   ],
   "scripts": {
     "build": "tsup ./index.js --format iife,cjs,esm --replaceNodeEnv",
-    "lint": "eslint \"**/*.js?\"",
+    "lint": "eslint \"**/*.@(js|jsx)\"",
     "dev": "npm run build -- --watch"
   },
   "peerDependencies": {

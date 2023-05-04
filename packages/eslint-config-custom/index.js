@@ -16,4 +16,4 @@ module.exports = {
     "jest/globals": true,
     es6: true
   }
-};
+}

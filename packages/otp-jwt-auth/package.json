@@ -9,7 +9,7 @@
   ],
   "scripts": {
     "build": "tsup ./index.jsx --format iife,cjs,esm --replaceNodeEnv",
-    "lint": "eslint \"**/*.js?\"",
+    "lint": "eslint \"**/*.@(js|jsx)\"",
     "dev": "npm run build -- --watch",
     "test": "jest --coverage",
     "test:watch": "jest --watch"

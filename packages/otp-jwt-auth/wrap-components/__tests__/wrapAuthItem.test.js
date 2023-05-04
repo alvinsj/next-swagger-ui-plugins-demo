@@ -1,7 +1,7 @@
-import React from "react";
-import wrapAuthItem from "../wrapAuthItem";
-import renderer from "react-test-renderer";
-import { Map } from "immutable";
+import React from "react"
+import wrapAuthItem from "../wrapAuthItem"
+import renderer from "react-test-renderer"
+import { Map } from "immutable"
 
 describe("wrapAuthItem", () => {
   const system = {
@@ -15,26 +15,26 @@ describe("wrapAuthItem", () => {
           <mock-component id={name} data-props={props}>
             {children}
           </mock-component>
-        );
+        )
       },
-  };
-  const Ori = () => <mock-element id={"Ori"} />;
-  const WrappedComponent = wrapAuthItem(Ori, system);
+  }
+  const Ori = () => <mock-element id={"Ori"} />
+  const WrappedComponent = wrapAuthItem(Ori, system)
 
   it("returns null component for others", () => {
-    expect(WrappedComponent).toBeInstanceOf(Function);
+    expect(WrappedComponent).toBeInstanceOf(Function)
 
     // match snapshot
     const tree = renderer
       .create(
         <WrappedComponent schema={new Map()} name="OtpJwtAuth" {...system} />
       )
-      .toJSON();
-    expect(tree).toMatchInlineSnapshot(`null`);
-  });
+      .toJSON()
+    expect(tree).toMatchInlineSnapshot(`null`)
+  })
 
   it("returns an OtpJwtAuth component", () => {
-    expect(WrappedComponent).toBeInstanceOf(Function);
+    expect(WrappedComponent).toBeInstanceOf(Function)
 
     // match snapshot
     const tree = renderer
@@ -45,7 +45,7 @@ describe("wrapAuthItem", () => {
           {...system}
         />
       )
-      .toJSON();
-    expect(tree).toMatchSnapshot();
-  });
-});
+      .toJSON()
+    expect(tree).toMatchSnapshot()
+  })
+})
