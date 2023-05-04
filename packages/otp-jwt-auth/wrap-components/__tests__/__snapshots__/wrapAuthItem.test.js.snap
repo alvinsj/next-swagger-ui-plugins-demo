@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`wrapAuthItem returns an OtpJwtAuth component 1`] = `
+<mock-component
+  data-props={
+    {
+      "authSelectors": {},
+      "authorized": undefined,
+      "errSelectors": {},
+      "getComponent": [Function],
+      "getSystem": [Function],
+      "name": "OtpJwtAuth",
+      "onChange": undefined,
+      "schema": Immutable.Map {
+        "type": "http",
+        "scheme": "bearer",
+        "otp": true,
+      },
+    }
+  }
+  id="OtpJwtAuth"
+/>
+`;
+
+exports[`wrapAuthItem returns null component for others 1`] = `null`;
