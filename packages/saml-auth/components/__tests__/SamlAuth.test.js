@@ -18,7 +18,7 @@ describe('SamlAuth', () => {
     const tree = renderer.create(
     <SamlAuth
       name="saml"
-      schema={new Map()}
+      schema={new Map({loginUrl: '/saml/sso'})}
       {...system} 
     
     />).toJSON()
@@ -33,7 +33,7 @@ describe('SamlAuth', () => {
     const tree = renderer.create(
       <SamlAuth
         name="saml"
-        schema={new Map()}
+        schema={new Map({logoutUrl: '/saml/slo'})}
         {...system} 
       
       />).toJSON()

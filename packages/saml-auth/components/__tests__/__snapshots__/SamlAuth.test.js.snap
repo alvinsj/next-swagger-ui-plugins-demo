@@ -12,6 +12,7 @@ exports[`SamlAuth renders login button 1`] = `
     <a
       className="btn modal-btn auth authorize"
       disabled={false}
+      href="/saml/sso"
     >
       Start
     </a>
@@ -30,6 +31,7 @@ exports[`SamlAuth renders logout button 1`] = `
     </strong>
     <a
       className="btn modal-btn auth authorize"
+      href="/saml/slo"
       onClick={[Function]}
     >
       Logout
