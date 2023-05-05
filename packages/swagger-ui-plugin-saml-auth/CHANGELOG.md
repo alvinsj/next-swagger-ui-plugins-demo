@@ -1,4 +1,4 @@
-# swagger-ui-plugin-saml-auth
+# @dsaid/swagger-ui-plugin-saml-auth
 
 ## 0.0.1
 
