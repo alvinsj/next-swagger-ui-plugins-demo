@@ -1,6 +1,6 @@
 
 import dynamic from 'next/dynamic'
-import otpJwtAuthPlugin from 'swagger-ui-plugin-otp-auth'
+import otpJwtAuthPlugin from '@dsaid/swagger-ui-plugin-otp-auth'
 import productLayoutPlugin from '@dsaid/swagger-ui-custom-layout'
 import samlAuthPlugin from '@dsaid/swagger-ui-plugin-saml-auth'
 import deepMerge from 'deepmerge'
