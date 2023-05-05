@@ -1,4 +1,4 @@
-# chain-wrap-components
+# @dsaid/chain-wrap-components
 
 ## 0.0.1
 
