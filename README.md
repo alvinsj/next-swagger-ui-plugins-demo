@@ -35,7 +35,7 @@ $ turbo run build        # run build script for all packages and apps
 Change logs is managed by [changesets](https://github.com/changesets/changesets).
 
 ```
-$ npx changeset          # cli to generate changeset, CI will auto-create a PR
+$ npx changeset          # cli to generate changeset, CI will auto-create a version bump PR
 ```
 
 ## Screenshots
