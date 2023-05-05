@@ -1,4 +1,4 @@
-# swagger-ui-plugin-otp-auth swagger-ui plugin
+# @dsaid/swagger-ui-plugin-otp-auth swagger-ui plugin
 
 ## swagger configuration
 ```yaml

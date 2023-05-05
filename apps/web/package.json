@@ -9,9 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "swagger-ui-plugin-otp-auth": "*",
-    "swagger-ui-plugin-saml-auth": "*",
-    "swagger-ui-custom-layout": "*",
+    "@dsaid/swagger-ui-plugin-otp-auth": "*",
+    "@dsaid/swagger-ui-plugin-saml-auth": "*",
+    "@dsaid/swagger-ui-custom-layout": "*",
     "@authenio/samlify-node-xmllint": "^2.0.0",
     "@types/jsonwebtoken": "^9.0.1",
     "@types/node": "18.15.11",
