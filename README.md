@@ -6,7 +6,6 @@ This repo consists of an [demo app](/apps/web), and the following npm packages:
 3. @dsaid/swagger-ui-custom-layout: [source](/packages/swagger-ui-custom-layout), [npm](https://www.npmjs.com/package/@dsaid/swagger-ui-custom-layout)
 4. @dsaid/chain-wrap-components: [source](/packages/chain-wrap-components), [npm](https://www.npmjs.com/package/@dsaid/chain-wrap-components)
 
-
 ## Prerequisites
 
 - Node.js v18 
@@ -26,10 +25,11 @@ $ npm install
 Managing the monorepo is done by [turbo](https://turbo.build/repo/docs)
 
 ```
-$ turbo run dev          # boot up instance, e.g. http://localhost:8090
+$ turbo run dev          # boot up instance, e.g. http://localhost:3000
 $ turbo run test         # run tests for all packages
 $ turbo run lint         # run lint for all packages
 $ turbo run test:watch   # run tests in watch mode
+$ turbo run build        # run build script for all packages and apps
 ``` 
 
 Change logs is managed by [changesets](https://github.com/changesets/changesets).
