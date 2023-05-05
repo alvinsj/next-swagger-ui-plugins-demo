@@ -1,6 +1,6 @@
 #  swagger-ui-plugins-monorepo
 
-This repo consists of an [demo](/apps/web), and the following npm packages:
+This repo consists of an [demo app](/apps/web), and the following npm packages:
 1. @dsaid/swagger-ui-plugin-otp-auth: [source](/packages/swagger-ui-plugin-otp-auth), [npm](https://www.npmjs.com/package/@dsaid/swagger-ui-plugin-otp-auth)
 2. @dsaid/swagger-ui-plugin-saml-auth: [source](/packages/swagger-ui-plugin-saml-auth), [npm](https://www.npmjs.com/package/@dsaid/swagger-ui-plugin-saml-auth)
 3. @dsaid/swagger-ui-custom-layout: [source](/packages/swagger-ui-custom-layout), [npm](https://www.npmjs.com/package/@dsaid/swagger-ui-custom-layout)
