@@ -1,4 +1,4 @@
-# @dsaid/swagger-ui-plugin-otp-auth
+# swagger-ui-plugin-otp-auth
 
 ## 0.0.2
 

@@ -1,5 +1,5 @@
 
-# @dsaid/swagger-ui-custom-layout [![npm version](https://badge.fury.io/js/@dsaid%2Fswagger-ui-custom-layout.svg)](https://badge.fury.io/js/@dsaid%2Fswagger-ui-custom-layout)
+# swagger-ui-custom-layout [![npm version](https://badge.fury.io/js/@dsaid%2Fswagger-ui-custom-layout.svg)](https://badge.fury.io/js/@dsaid%2Fswagger-ui-custom-layout)
 
 This is a custom layout plugin for [Swagger UI](https://swagger.io/docs/open-source-tools/swagger-ui/customization/plugin-api/).
 
@@ -11,13 +11,13 @@ This is a custom layout plugin for [Swagger UI](https://swagger.io/docs/open-sou
 ## Install
 
 ```sh
-$ npm install @dsaid/swagger-ui-custom-layout
+$ npm install swagger-ui-custom-layout
 ```
 
 ## Usage
 
 ```javascript
-import customLayoutPlugin from '@dsaid/swagger-ui-custom-layout'
+import customLayoutPlugin from 'swagger-ui-custom-layout'
 
 // swagger-ui initialization
   SwaggerUI({
