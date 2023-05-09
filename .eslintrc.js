@@ -1,4 +1,4 @@
-module.exports = {
+const config = {
   root: true,
   // This tells ESLint to load the config from the package `eslint-config-custom`
   extends: ["custom"],
@@ -7,4 +7,6 @@ module.exports = {
       rootDir: ["apps/*/"],
     },
   },
-};
+}
+
+export default config

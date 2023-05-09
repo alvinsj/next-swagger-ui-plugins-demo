@@ -1,4 +1,4 @@
-# @dsaid/swagger-ui-custom-layout
+# swagger-ui-custom-layout
 
 ## 0.0.2
 

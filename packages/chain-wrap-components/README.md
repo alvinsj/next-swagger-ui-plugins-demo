@@ -1,5 +1,5 @@
 
-# @dsaid/chain-wrap-components [![npm version](https://badge.fury.io/js/@dsaid%2Fchain-wrap-components.svg)](https://badge.fury.io/js/@dsaid%2Fchain-wrap-components)
+# chain-wrap-components [![npm version](https://badge.fury.io/js/@dsaid%2Fchain-wrap-components.svg)](https://badge.fury.io/js/@dsaid%2Fchain-wrap-components)
 
 This provides a helper function for [Swagger UI](https://swagger.io/docs/open-source-tools/swagger-ui/customization/plugin-api/), it allows:
 
@@ -14,15 +14,15 @@ This provides a helper function for [Swagger UI](https://swagger.io/docs/open-so
 ## Install
 
 ```sh
-$ npm install @dsaid/chain-wrap-components
+$ npm install chain-wrap-components
 ```
 
 ## Usage
 
 ```javascript
-import otpAuthPlugin from '@dsaid/swagger-ui-plugin-otp-auth'
-import samlAuthPlugin from '@dsaid/swagger-ui-plugin-saml-auth'
-import chainWrapComponents from '@dsaid/chain-wrap-components'
+import otpAuthPlugin from 'swagger-ui-plugin-otp-auth'
+import samlAuthPlugin from 'swagger-ui-plugin-saml-auth'
+import chainWrapComponents from 'chain-wrap-components'
 
 // swagger-ui initialization
   SwaggerUI({
