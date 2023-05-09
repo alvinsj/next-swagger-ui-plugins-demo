@@ -1,5 +1,11 @@
 # swagger-ui-plugin-saml-auth
 
+## 0.0.3
+
+### Patch Changes
+
+- 83fd998: remove scope
+
 ## 0.0.2
 
 ### Patch Changes
