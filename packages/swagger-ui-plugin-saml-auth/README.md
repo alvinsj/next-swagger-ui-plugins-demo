@@ -1,5 +1,5 @@
 
-# @dsaid/swagger-ui-plugin-saml-auth [![npm version](https://badge.fury.io/js/@dsaid%2Fswagger-ui-plugin-saml-auth.svg)](https://badge.fury.io/js/@dsaid%2Fswagger-ui-plugin-saml-auth)
+# swagger-ui-plugin-saml-auth [![npm version](https://badge.fury.io/js/@dsaid%2Fswagger-ui-plugin-saml-auth.svg)](https://badge.fury.io/js/@dsaid%2Fswagger-ui-plugin-saml-auth)
 
 This is a SAML authentication plugin for [Swagger UI](https://swagger.io/docs/open-source-tools/swagger-ui/customization/plugin-api/).
 
@@ -11,13 +11,13 @@ This is a SAML authentication plugin for [Swagger UI](https://swagger.io/docs/op
 ## Install
 
 ```sh
-$ npm install @dsaid/swagger-ui-plugin-saml-auth
+$ npm install swagger-ui-plugin-saml-auth
 ```
 
 ## Usage
 
 ```javascript
-import samlAuthPlugin from '@dsaid/swagger-ui-plugin-saml-auth'
+import samlAuthPlugin from 'swagger-ui-plugin-saml-auth'
 
 // swagger-ui initialization
   SwaggerUI({
