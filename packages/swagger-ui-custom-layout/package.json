@@ -8,10 +8,14 @@
   "files": [
     "dist"
   ],
+  "publishConfig": {
+    "@dsaidgovsg:registry": "https://npm.pkg.github.com"
+  },
   "scripts": {
     "build": "tsup ./index.js --format iife,cjs,esm --replaceNodeEnv",
     "lint": "eslint \"**/*.@(js|jsx)\"",
-    "dev": "npm run build -- --watch"
+    "dev": "npm run build -- --watch",
+    "prepare": "npm run build"
   },
   "peerDependencies": {
     "react": "18.2.0",
