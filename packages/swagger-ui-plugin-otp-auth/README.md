@@ -1,5 +1,5 @@
 
-# swagger-ui-plugin-otp-auth [![npm version](https://badge.fury.io/js/@dsaid%2Fswagger-ui-plugin-otp-auth.svg)](https://badge.fury.io/js/@dsaid%2Fswagger-ui-plugin-otp-auth)
+# @dsaidgovsg/swagger-ui-plugin-otp-auth
 
 This is a OTP authentication plugin for [Swagger UI](https://swagger.io/docs/open-source-tools/swagger-ui/customization/plugin-api/).
 
@@ -10,14 +10,24 @@ This is a OTP authentication plugin for [Swagger UI](https://swagger.io/docs/ope
 
 ## Install
 
+Add github npm registry to `.npmrc`,
+
 ```sh
-$ npm install swagger-ui-plugin-otp-auth
+# .npmrc
+always-auth = true
+@dsaidgovsg:registry=https://npm.pkg.github.com
+```
+
+Install the package,
+
+```sh
+$ npm install @dsaidgovsg/swagger-ui-plugin-otp-auth
 ```
 
 ## Usage
 
 ```javascript
-import OtpAuthPlugin from 'swagger-ui-plugin-otp-auth'
+import OtpAuthPlugin from '@dsaidgovsg/swagger-ui-plugin-otp-auth'
 
 // swagger-ui initialization
   SwaggerUI({

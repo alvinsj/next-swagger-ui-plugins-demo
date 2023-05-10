@@ -28,27 +28,26 @@
       margin: 0;
       background: #fafafa;
     }
-
   </style>
   <script type="importmap">
       {
         "imports": {
           "react": "https://unpkg.com/@esm-bundle/react/esm/react.production.min.js",
           "react/jsx-runtime": "./react-jsx-runtime.js",
-          "swagger-ui-custom-layout": "/packages/swagger-ui-custom-layout/dist/index.mjs",
-          "swagger-ui-plugin-otp-auth": "/packages/swagger-ui-plugin-otp-auth/dist/index.mjs",
-          "swagger-ui-plugin-saml-auth": "/packages/swagger-ui-plugin-saml-auth/dist/index.mjs",
-          "chain-wrap-components": "/packages/chain-wrap-components/dist/index.mjs"
+          "@dsaidgovsg/swagger-ui-custom-layout": "/packages/swagger-ui-custom-layout/dist/index.mjs",
+          "@dsaidgovsg/swagger-ui-plugin-otp-auth": "/packages/swagger-ui-plugin-otp-auth/dist/index.mjs",
+          "@dsaidgovsg/swagger-ui-plugin-saml-auth": "/packages/swagger-ui-plugin-saml-auth/dist/index.mjs",
+          "@dsaidgovsg/chain-wrap-components": "/packages/chain-wrap-components/dist/index.mjs"
         }
       }
     </script>
   <script crossorigin src="https://unpkg.com/swagger-ui-dist@4.18.3/swagger-ui-bundle.js"> </script>
 
   <script type="module">
-    import productLayoutPlugin from "swagger-ui-custom-layout";
-    import otpJwtAuthPlugin from 'swagger-ui-plugin-otp-auth';
-    import samlAuthPlugin from 'swagger-ui-plugin-saml-auth';
-    import chainWrapComponents from 'chain-wrap-components';
+    import productLayoutPlugin from "@dsaidgovsg/swagger-ui-custom-layout";
+    import otpJwtAuthPlugin from '@dsaidgovsg/swagger-ui-plugin-otp-auth';
+    import samlAuthPlugin from '@dsaidgovsg/swagger-ui-plugin-saml-auth';
+    import chainWrapComponents from '@dsaidgovsg/chain-wrap-components';
 
     window.onload = function () {
 

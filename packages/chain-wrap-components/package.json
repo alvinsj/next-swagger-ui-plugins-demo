@@ -1,5 +1,5 @@
 {
-  "name": "chain-wrap-components",
+  "name": "@dsaidgovsg/chain-wrap-components",
   "version": "0.0.3",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",

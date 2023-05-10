@@ -1,5 +1,5 @@
 {
-  "name": "swagger-ui-plugin-saml-auth",
+  "name": "@dsaidgovsg/swagger-ui-plugin-saml-auth",
   "version": "0.0.3",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
