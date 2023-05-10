@@ -1,5 +1,5 @@
 {
-  "name": "swagger-ui-custom-layout",
+  "name": "@dsaidgovsg/swagger-ui-custom-layout",
   "version": "0.0.3",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",

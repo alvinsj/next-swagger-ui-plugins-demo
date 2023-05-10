@@ -1,9 +1,9 @@
 
 import dynamic from 'next/dynamic'
-import otpJwtAuthPlugin from 'swagger-ui-plugin-otp-auth'
-import productLayoutPlugin from 'swagger-ui-custom-layout'
-import samlAuthPlugin from 'swagger-ui-plugin-saml-auth'
-import chainWrapComponents from 'chain-wrap-components'
+import otpJwtAuthPlugin from '@dsaidgovsg/swagger-ui-plugin-otp-auth'
+import productLayoutPlugin from '@dsaidgovsg/swagger-ui-custom-layout'
+import samlAuthPlugin from '@dsaidgovsg/swagger-ui-plugin-saml-auth'
+import chainWrapComponents from '@dsaidgovsg/chain-wrap-components'
 
 // swagger-ui-react is not SSR compatible
 const SwaggerUI = dynamic(import('swagger-ui-react'), { ssr: false })

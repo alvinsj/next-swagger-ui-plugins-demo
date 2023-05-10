@@ -9,10 +9,10 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "swagger-ui-plugin-otp-auth": "*",
-    "swagger-ui-plugin-saml-auth": "*",
-    "swagger-ui-custom-layout": "*",
-    "chain-wrap-components": "*",
+    "@dsaidgovsg/swagger-ui-plugin-otp-auth": "*",
+    "@dsaidgovsg/swagger-ui-plugin-saml-auth": "*",
+    "@dsaidgovsg/swagger-ui-custom-layout": "*",
+    "@dsaidgovsg/chain-wrap-components": "*",
     "@authenio/samlify-node-xmllint": "^2.0.0",
     "@types/jsonwebtoken": "^9.0.1",
     "@types/node": "18.15.11",

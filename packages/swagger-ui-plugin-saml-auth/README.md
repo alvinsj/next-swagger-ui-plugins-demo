@@ -1,5 +1,5 @@
 
-# swagger-ui-plugin-saml-auth [![npm version](https://badge.fury.io/js/@dsaid%2Fswagger-ui-plugin-saml-auth.svg)](https://badge.fury.io/js/@dsaid%2Fswagger-ui-plugin-saml-auth)
+# @dsaidgovsg/swagger-ui-plugin-saml-auth 
 
 This is a SAML authentication plugin for [Swagger UI](https://swagger.io/docs/open-source-tools/swagger-ui/customization/plugin-api/).
 
@@ -10,14 +10,24 @@ This is a SAML authentication plugin for [Swagger UI](https://swagger.io/docs/op
 
 ## Install
 
+Add github npm registry to `.npmrc`,
+
 ```sh
-$ npm install swagger-ui-plugin-saml-auth
+# .npmrc
+always-auth = true
+@dsaidgovsg:registry=https://npm.pkg.github.com
+```
+
+Install the package,
+
+```sh
+$ npm install @dsaidgovsg/swagger-ui-plugin-saml-auth
 ```
 
 ## Usage
 
 ```javascript
-import samlAuthPlugin from 'swagger-ui-plugin-saml-auth'
+import samlAuthPlugin from '@dsaidgovsg/swagger-ui-plugin-saml-auth'
 
 // swagger-ui initialization
   SwaggerUI({

@@ -1,4 +1,4 @@
-# chain-wrap-components
+# @dsaidgovsg/chain-wrap-components
 
 ## 0.0.3
 
