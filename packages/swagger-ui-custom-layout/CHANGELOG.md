@@ -1,5 +1,11 @@
 # @dsaidgovsg/swagger-ui-custom-layout
 
+## 0.0.4
+
+### Patch Changes
+
+- eb3fc1b: add publish config for github npm repo
+
 ## 0.0.3
 
 ### Patch Changes
